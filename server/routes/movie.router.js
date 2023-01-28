@@ -16,9 +16,18 @@ router.get('/', (req, res) => {
 
 });
 
-//GET route for one movie
+//GET route for one movie/details
 router.get('/details/:id', (req, res) => {
-  const queryText = 'SELECT * FROM movies WHERE id=$1';
+  const queryText = `SELECT
+  "movies"."id",
+  "movies"."title",
+  "movies"."description",
+  "movies"."poster",
+  "genres"."name"
+  FROM "movies"
+  JOIN "movies_genres" ON "movies_genres"."movie_id" = "movies"."id"
+  JOIN "genres" ON "genres"."id" = "movies_genres"."genre_id"
+  WHERE "movies"."id" = $1;`;
   pool.query(queryText, [req.params.id])
     .then((result) => { res.send(result.rows); })
     .catch((err) => {
