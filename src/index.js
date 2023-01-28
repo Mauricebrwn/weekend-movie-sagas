@@ -51,6 +51,7 @@ const genres = (state = [], action) => {
             return state;
     }
 }
+// make a movie details reducer 
 
 // Create one store that all components can use
 const storeInstance = createStore(
