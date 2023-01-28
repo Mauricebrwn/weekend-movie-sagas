@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
     })
 
 });
+
 //GET route for one movie
 router.get('/details/:id', (req, res) => {
   const queryText = 'SELECT * FROM movies WHERE id=$1';
