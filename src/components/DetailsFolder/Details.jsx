@@ -4,17 +4,17 @@ import { useHistory, useParams } from 'react-router-dom';
 import './Details.css'
 
 function DetailList() {
-
+//necessary const used for dispatch,reducers,params, and history
     const dispatch = useDispatch();
     const details = useSelector(store => store.details);
     const params = useParams();
     const history = useHistory();
-
+//function to run to be brought home on button click
     const backToHomePage = (event) => {
         event.preventDefault();
         history.push('/')
     }
-
+//
     useEffect(() => {
         const movieId = params.id
         dispatch({ 
@@ -25,11 +25,11 @@ function DetailList() {
 
     return (
         <div>
-            <h1>Movie Details:</h1>
-            <ul>
+            <h1>Movie Details</h1>
+            
                 {details.map((detail, index) =>{
                     return (
-                        <li key={ index }>
+                        <section key={ index }>
                         <img 
                             src={detail.poster}></img>
                         <p className='titleHeader'>Title:</p>
@@ -37,10 +37,10 @@ function DetailList() {
                         <p className='descriptionHeader'>Description:</p>
                         <p className='description'>{detail.description}</p>
                         <p className='genres'>Genre: {detail.genres}</p>
-                    </li>
+                    </section>
                     );
                 })}
-            </ul>
+            
 
         <button className='button' onClick={backToHomePage}>Back to home page</button>
 

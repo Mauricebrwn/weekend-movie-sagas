@@ -1,9 +1,6 @@
 body{
     align-self: center;
 }
-h1{
-    font-size: 30px;
-}
 .titleHeader{
     font-size: 21px;
     font-weight: bold;
@@ -19,7 +16,7 @@ h1{
     margin-left: 2cm;
     margin-right: 2cm;
 }
-.genresHeader{
+.genres{
     font-size: 18px;
 }
 .button { 

@@ -11,12 +11,10 @@ function App() {
         <Route path="/" exact>
           <MovieList />
         </Route>
-        
-        {/* Details page */}
+      {/* route path used 👇 to bring to details page based on id */}
         <Route path="/details/:id" exact>
         <DetailList />
         </Route>
-        {/* Add Movie page */}
       </Router>
     </div>
   );
