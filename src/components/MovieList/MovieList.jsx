@@ -14,12 +14,7 @@ function MovieList() {
     }, []);
 
     const captureDetails= (movie) =>{
-        console.log('The selected movie was', movie)
-        //collects info from movie and stores locally
-        
-        dispatch({ type: 'SET_DETAILS', payload: movie })
-        //navigates to details page
-        history.push(`/details`);
+        history.push(`/details/${movie.id}`)
     }
 
     return (
@@ -29,7 +24,6 @@ function MovieList() {
                 {movies.map(movie => {
                     return (
                         <div 
-                        className= "card"
                         key={movie.id} >
                             <h3>{movie.title}</h3>
                             <img 
@@ -41,7 +35,7 @@ function MovieList() {
                 })}
             </section>
         </main>
-    )
+    );
 }
 
 export default MovieList;

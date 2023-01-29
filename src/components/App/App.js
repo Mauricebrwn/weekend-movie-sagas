@@ -13,7 +13,9 @@ function App() {
         </Route>
         
         {/* Details page */}
+        <Route path="/details/:id" exact>
         <DetailList />
+        </Route>
         {/* Add Movie page */}
       </Router>
     </div>

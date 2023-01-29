@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 function DetailList() {
 
     const dispatch = useDispatch();
     const details = useSelector(store => store.details);
+    console.log('*******');
+    console.log(details)
+    const params = useParams();
     const history = useHistory();
 
     const backToHomePage = (event) => {
@@ -14,22 +17,28 @@ function DetailList() {
     }
 
     useEffect(() => {
-        dispatch({ type: 'SAGA/FETCH_DETAILS' });
-    }, []);
+        const movieId = params.id
+        dispatch({ 
+            type: 'SAGA/FETCH_DETAILS',
+            payload: movieId
+         });
+    }, [params.id]);
 
     return (
         <div>
-            <h3>Movie Details:</h3>
+            <h1>Movie Details:</h1>
             <ul>
-                {Array.from(details).map((detail) =>{
-                    return <li key={detail.id}>
-                        {detail.id}
+                {details.map((detail) =>{
+                    return (
+                        <li key={detail.id}>
+                        <img 
+                            src={detail.poster}></img>
+                        {/* {detail.id}
                         {detail.title}
                         {detail.description}
-                        <img 
-                            src={movie.poster}></img>
-                        {detail.name}
+                        {detail.name} */}
                     </li>
+                    );
                 })}
             </ul>
 

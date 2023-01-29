@@ -29,12 +29,17 @@ function* fetchAllMovies() {
     }
         
 }
-function* fetchAllDetails() {
+function* fetchAllDetails(action) {
     // get all details from the DB
+
     try {
-        const movies = yield axios.get('/api/details');
-        console.log('get all:', movies.data);
-        yield put({ type: 'SET_DETAILS', payload: movies.data });
+        const response = yield axios({
+            method: 'GET',
+            url:`api/movie/${action.payload}`,
+        })
+        yield put({
+            type: 'SET_DETAILS', 
+            payload: response.data })
 
     } catch {
         console.log('get all error');
