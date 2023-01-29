@@ -9,7 +9,7 @@ Duration- 2 day sprint
 Over the course of a weekend we were tasked with using our knowledge of Redux, React, SQL Joins, and Sagas in order to refactor an app - and add a Detail view for each movie in their database.
 
 ## Approach
-As this project had many components speaking to eachother I started with a DB design to help visualize the database table relationships and the flow.
+As this project had many components speaking to eachother I started with a DB design to help visualize the database table, relationships, and the flow.
 
 ## Prerequisites
 - Node.js
@@ -31,7 +31,7 @@ As this project had many components speaking to eachother I started with a DB de
 6. Navigate to http://localhost:3000/
 
 ## Usage
-This web application is meant to serve as a tool to view movies and details(title, descrioption, and genre):
+This web application is meant to serve as a tool to view movies and details(title, description, and genre):
 
 1. Using the provided movies on the home page - click the movie of your choice to see the details.
 2. Once done, navigate back to the home page using the Back to home button 
