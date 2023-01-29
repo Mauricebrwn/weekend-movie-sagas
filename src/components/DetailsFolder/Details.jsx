@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from 'react-router-dom';
 
 function DetailList() {
 
     const dispatch = useDispatch();
     const details = useSelector(store => store.details);
-    console.log('*******');
-    console.log(details)
     const params = useParams();
     const history = useHistory();
 
@@ -19,7 +17,7 @@ function DetailList() {
     useEffect(() => {
         const movieId = params.id
         dispatch({ 
-            type: 'SAGA/FETCH_DETAILS',
+            type: 'FETCH_DETAILS',
             payload: movieId
          });
     }, [params.id]);
@@ -33,10 +31,9 @@ function DetailList() {
                         <li key={detail.id}>
                         <img 
                             src={detail.poster}></img>
-                        {/* {detail.id}
                         {detail.title}
                         {detail.description}
-                        {detail.name} */}
+                        {detail.genre}
                     </li>
                     );
                 })}

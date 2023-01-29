@@ -29,6 +29,7 @@ function* fetchAllMovies() {
     }
         
 }
+
 function* fetchAllDetails(action) {
     // get all details from the DB
 
