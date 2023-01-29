@@ -6,6 +6,7 @@ import './Details.css'
 function DetailList() {
 //necessary const used for dispatch,reducers,params, and history
     const dispatch = useDispatch();
+    // calls the details reducer from the createStore
     const details = useSelector(store => store.details);
     const params = useParams();
     const history = useHistory();
@@ -14,7 +15,7 @@ function DetailList() {
         event.preventDefault();
         history.push('/')
     }
-//
+//use effect used to dispatch fetch details saga function
     useEffect(() => {
         const movieId = params.id
         dispatch({ 
@@ -26,7 +27,7 @@ function DetailList() {
     return (
         <div>
             <h1>Movie Details</h1>
-            
+                {/* details map loops through details associated with movie details */}
                 {details.map((detail, index) =>{
                     return (
                         <section key={ index }>
@@ -41,7 +42,7 @@ function DetailList() {
                     );
                 })}
             
-
+        {/*button used to call the backToHomePage function 👇  */}
         <button className='button' onClick={backToHomePage}>Back to home page</button>
 
         </div>
