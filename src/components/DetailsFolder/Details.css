@@ -22,8 +22,8 @@ h1{
 .genresHeader{
     font-size: 18px;
 }
-.button {
-    align-self: center;
+.button { 
+    align-items: center;
     background-color: #3a84fa;
     font-size: 15px;
     border-radius: 4px;

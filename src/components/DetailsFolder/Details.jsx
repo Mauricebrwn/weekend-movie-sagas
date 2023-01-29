@@ -36,8 +36,7 @@ function DetailList() {
                         <p className='title'>{detail.title}</p>
                         <p className='descriptionHeader'>Description:</p>
                         <p className='description'>{detail.description}</p>
-                        <p className='genresHeader'>Genre: {detail.genres}</p>
-                       
+                        <p className='genres'>Genre: {detail.genres}</p>
                     </li>
                     );
                 })}
