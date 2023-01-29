@@ -1,0 +1,31 @@
+body{
+    align-self: center;
+}
+h1{
+    font-size: 30px;
+}
+.titleHeader{
+    font-size: 21px;
+    font-weight: bold;
+}
+.title{
+    font-size: 20px;
+}
+.descriptionHeader{
+    font-size: 21px;
+    font-weight: bold;
+}
+.description{
+    margin-left: 2cm;
+    margin-right: 2cm;
+}
+.genresHeader{
+    font-size: 18px;
+}
+.button {
+    align-self: center;
+    background-color: #3a84fa;
+    font-size: 15px;
+    border-radius: 4px;
+    padding: 5px;
+  }

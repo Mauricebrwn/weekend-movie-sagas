@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+import './Details.css'
 
 function DetailList() {
 
@@ -26,20 +27,23 @@ function DetailList() {
         <div>
             <h1>Movie Details:</h1>
             <ul>
-                {details.map((detail) =>{
+                {details.map((detail, index) =>{
                     return (
-                        <li key={detail.id}>
+                        <li key={ index }>
                         <img 
                             src={detail.poster}></img>
-                        {detail.title}
-                        {detail.description}
-                        {detail.genre}
+                        <p className='titleHeader'>Title:</p>
+                        <p className='title'>{detail.title}</p>
+                        <p className='descriptionHeader'>Description:</p>
+                        <p className='description'>{detail.description}</p>
+                        <p className='genresHeader'>Genre: {detail.genres}</p>
+                       
                     </li>
                     );
                 })}
             </ul>
 
-        <button onClick={backToHomePage}>Back to home page</button>
+        <button className='button' onClick={backToHomePage}>Back to home page</button>
 
         </div>
 

@@ -1,7 +1,12 @@
+body{
+  background-color: bisque;
+}
 .App {
   text-align: center;
 }
-
+div{
+  padding: .5cm;
+}
 
 .App-header {
   background-color: #222;
