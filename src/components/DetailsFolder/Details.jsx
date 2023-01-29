@@ -31,7 +31,7 @@ function DetailList() {
                 {details.map((detail, index) =>{
                     return (
                         <section key={ index }>
-                        <img 
+                        <img className='poster'
                             src={detail.poster}></img>
                         <p className='titleHeader'>Title:</p>
                         <p className='title'>{detail.title}</p>
