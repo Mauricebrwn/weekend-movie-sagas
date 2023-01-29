@@ -5,7 +5,8 @@ body{
   text-align: center;
 }
 div{
-  padding: .5cm;
+  margin-left: .25cm;
+  padding: .65cm;
 }
 
 .App-header {

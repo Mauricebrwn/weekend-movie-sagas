@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 
 //GET route for one movie/details
 router.get('/:id', (req, res) => {
+  //query used to select poster,title,description, and genre
   const queryText = `SELECT
     "movies"."title",
     "movies"."poster",
